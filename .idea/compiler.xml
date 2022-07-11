@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="easyshop-sercice-entity-content" />
+        <module name="easyshop-service-base" />
+        <module name="easyshop-service-content-api" />
+        <module name="easyshop-service-commons-generator" />
+        <module name="easyshop-service-admin-operator" />
+        <module name="easyshop-service-entity-content" />
+        <module name="easyshop-service-impl-content" />
+        <module name="base" />
+        <module name="easyshop-service-commons-utils" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="base" target="8" />
+      <module name="easyshop-service-entity-content" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="easyshop-sercice-entity-content" options="-parameters" />
+      <module name="easyshop-service-admin" options="-parameters" />
+      <module name="easyshop-service-admin-operator" options="-parameters" />
+      <module name="easyshop-service-api" options="-parameters" />
+      <module name="easyshop-service-base" options="-parameters" />
+      <module name="easyshop-service-commons-generator" options="-parameters" />
+      <module name="easyshop-service-commons-utils" options="-parameters" />
+      <module name="easyshop-service-content-api" options="-parameters" />
+      <module name="easyshop-service-entity" options="-parameters" />
+      <module name="easyshop-service-entity-content" options="-parameters" />
+      <module name="easyshop-service-impl" options="-parameters" />
+      <module name="easyshop-service-impl-content" options="-parameters" />
+    </option>
+  </component>
+</project>

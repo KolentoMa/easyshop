@@ -1,0 +1,7 @@
+# Project exclude paths
+/easyshop-service-admin/easyshop-service-admin-operator/target/
+/easyshop-service-api/easyshop-service-content-api/target/
+/easyshop-service-commons/easyshop-service-commons-generator/target/
+/easyshop-service-commons/easyshop-service-commons-utils/target/
+/easyshop-service-entity/easyshop-sercice-entity-content/target/
+/easyshop-service-impl/easyshop-service-impl-content/target/

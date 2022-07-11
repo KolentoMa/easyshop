@@ -1,0 +1,29 @@
+server:
+  port: 9090
+spring:
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    encoding: UTF-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    # Nocas配置
+  application:
+    name: appoperator
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+  main:
+    allow-bean-definition-overriding: true
+    #服务声明重复
+
+mybatis-plus:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.easyshop.pojo

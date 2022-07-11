@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9374a09f-85f5-459c-bfd6-7fa226e700f4" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\develop\maven\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../maven/maven-3.8.3" />
+        <option name="showDialogWithAdvancedSettings" value="true" />
+        <option name="userSettingsFile" value="D:\develop\maven\maven-3.8.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2BbnuB7saWphqClSTbMKSlG5LC2" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/target/classes/templates" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.2475" />
+    <property name="project.structure.side.proportion" value="0.53846157" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\develop\code\easyshop\easyshop-service-admin\easyshop-service-admin-operator\target\classes\templates" />
+      <recent name="D:\develop\code\easyshop\easyshop-service-admin\easyshop-service-admin-operator\src\main\resources\templates" />
+      <recent name="D:\develop\code\easyshop\easyshop-service-admin\easyshop-service-admin-operator\target\classes" />
+      <recent name="D:\develop\code\easyshop\easyshop-service-admin\easyshop-service-admin-operator\target" />
+      <recent name="D:\develop\code\easyshop\easyshop-service-admin\easyshop-service-admin-operator\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.easyshop.service" />
+      <recent name="com.easyshop.commons" />
+      <recent name="com.easyshop.config" />
+      <recent name="com.easyshop.service.impl" />
+      <recent name="com.easyshop.mapper" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AppOperator">
+    <configuration name="AppContent (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="easyshop-service-impl-content" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.easyshop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.easyshop.AppContent" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppContent (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="easyshop-service-impl-content" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.easyshop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.easyshop.AppContent" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppContent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="easyshop-service-impl-content" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.easyshop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.easyshop.AppContent" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppOperator" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="easyshop-service-admin-operator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.easyshop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.easyshop.AppOperator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AppContent" />
+      <item itemvalue="Spring Boot.AppOperator" />
+      <item itemvalue="Spring Boot.AppContent (1)" />
+      <item itemvalue="Spring Boot.AppContent (2)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.AppOperator" />
+        <item itemvalue="Spring Boot.AppContent" />
+        <item itemvalue="Spring Boot.AppContent (1)" />
+        <item itemvalue="Spring Boot.AppContent (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9374a09f-85f5-459c-bfd6-7fa226e700f4" name="Changes" comment="" />
+      <created>1657183874094</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657183874094</updated>
+      <workItem from="1657183875335" duration="21763000" />
+      <workItem from="1657246625124" duration="160000" />
+      <workItem from="1657252150250" duration="2723000" />
+      <workItem from="1657356305298" duration="609000" />
+      <workItem from="1657385679780" duration="3302000" />
+      <workItem from="1657390116010" duration="95000" />
+      <workItem from="1657438161650" duration="14472000" />
+      <workItem from="1657462563401" duration="1377000" />
+      <workItem from="1657509523310" duration="10318000" />
+      <workItem from="1657532222500" duration="1260000" />
+      <workItem from="1657541474388" duration="9076000" />
+      <workItem from="1657551672857" duration="7597000" />
+      <workItem from="1657561333369" duration="85000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
