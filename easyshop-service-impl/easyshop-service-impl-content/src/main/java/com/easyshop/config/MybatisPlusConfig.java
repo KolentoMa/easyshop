@@ -24,5 +24,4 @@ public class MybatisPlusConfig {
         return paginationInterceptor;
     }
 
-
 }

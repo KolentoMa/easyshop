@@ -15,12 +15,13 @@ import java.util.List;
 @RequestMapping("content_category")
 public class ContentCategoryController {
 
-
     @Autowired
     ContentCategoryServiceApi contentCategoryServiceApi;
 
     @GetMapping("list")
     public DataResults list(){
-        return DataResults.success(ResultCode.SUCCESS,contentCategoryServiceApi.list());
+        DataResults<List<ContentCategory>> list = contentCategoryServiceApi.list();
+        System.out.println(list.getData());
+        return list;
     }
 }

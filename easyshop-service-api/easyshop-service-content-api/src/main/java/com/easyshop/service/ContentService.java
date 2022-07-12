@@ -55,4 +55,11 @@ public interface ContentService  {
     @ApiOperation(value="添加广告信息",notes = "添加广告信息")
     DataResults add(@RequestBody Content content);
 
+    @DeleteMapping("deleteAll")
+    @ApiOperation(value="批量删除广告信息",notes = "批量删除广告信息")
+    DataResults deleteAll(@RequestParam("ids") String ids);
+
+    @GetMapping ("findOneById/{id}")
+    @ApiOperation(value="根据ID获取广告信息",notes = "根据ID获取广告信息")
+    DataResults findOneById(@PathVariable(name = "id") Integer id);
 }

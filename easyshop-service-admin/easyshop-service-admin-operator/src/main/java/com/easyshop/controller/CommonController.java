@@ -26,6 +26,5 @@ public class CommonController {
         model.addAttribute("pageutils",data.getData());
         model.addAttribute("contentVo",contentVo);
         return "content";
-
     }
 }

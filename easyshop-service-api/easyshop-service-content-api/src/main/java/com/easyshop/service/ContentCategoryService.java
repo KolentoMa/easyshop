@@ -28,13 +28,13 @@ public interface ContentCategoryService  {
     DataResults<ContentCategory> getById(@PathVariable("id") Integer id);
 
     @PutMapping("update")
-    DataResults update(ContentCategory contentCategory);
+    DataResults update(@RequestBody ContentCategory contentCategory);
 
     @DeleteMapping("{id}")
     DataResults delete(@PathVariable("id") Integer id);
 
     @PostMapping("add")
-    DataResults add(ContentCategory contentCategory);
+    DataResults add(@RequestBody ContentCategory contentCategory);
 
 
 }

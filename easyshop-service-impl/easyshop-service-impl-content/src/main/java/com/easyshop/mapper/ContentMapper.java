@@ -16,4 +16,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ContentMapper extends BaseMapper<Content> {
 
+    int deleteBatch(String[] ids);
 }

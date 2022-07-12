@@ -17,6 +17,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.List;
 
 /**
@@ -79,16 +82,37 @@ public class ContentServiceImpl  implements ContentService {
 
     @Override
     public DataResults delete(Integer id) {
-        Content content = contentMapper.selectById(id);
-        content.setDel(1);
-        contentMapper.updateById(content);
-        return DataResults.success(ResultCode.SUCCESS);
+        try {
+            Content content = contentMapper.selectById(id);
+            content.setDel(1);
+            contentMapper.updateById(content);
+            return DataResults.success(ResultCode.SUCCESS);
+        } catch (Exception e) {
+            return DataResults.success(ResultCode.NO_DELETE);
+        }
     }
 
     @Override
     public DataResults add(Content content) {
         contentMapper.insert(content);
         return DataResults.success(ResultCode.SUCCESS);
+    }
+
+    @Override
+    public DataResults deleteAll(@RequestParam("ids") String ids) {
+        try {
+            String[] idss = ids.split(",");
+            contentMapper.deleteBatch(idss);
+            return DataResults.success(ResultCode.SUCCESS);
+        } catch (NumberFormatException e) {
+            return DataResults.success(ResultCode.NO_DELETE);
+        }
+    }
+
+    @Override
+    public DataResults findOneById(@PathVariable("id") Integer id) {
+        //System.out.println(id);
+        return DataResults.success(ResultCode.SUCCESS,contentMapper.selectById(id));
     }
 
 }
