@@ -22,7 +22,7 @@ import java.util.List;
 public interface ContentCategoryService  {
 
     @GetMapping("list")
-    List<ContentCategory> list();
+    DataResults<List<ContentCategory>> list();
 
     @GetMapping("{id}")
     DataResults<ContentCategory> getById(@PathVariable("id") Integer id);

@@ -26,8 +26,8 @@ public class ContentCategoryServiceImpl  implements ContentCategoryService {
     ContentCategoryMapper categoryMapper;
 
     @Override
-    public List<ContentCategory> list() {
-        return categoryMapper.selectList(new QueryWrapper<ContentCategory>().eq("del",0));
+    public DataResults<List<ContentCategory>> list() {
+        return DataResults.success(ResultCode.SUCCESS,categoryMapper.selectList(new QueryWrapper<ContentCategory>().eq("del",0)));
     }
 
     @Override

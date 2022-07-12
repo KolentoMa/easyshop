@@ -26,7 +26,7 @@
                             <div class="pull-left">
                                 <div class="form-group form-inline">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#addModal" ><i class="fa fa-file-o"></i> 新建</button>
+                                        <button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal" ><i class="fa fa-file-o"></i> 新建</button>
                                         <button type="button" class="btn btn-default" title="删除" ><i class="fa fa-trash-o"></i> 删除</button>
                                         <button type="button" class="btn btn-default" title="开启" onclick='confirm("你确认要开启吗？")'><i class="fa fa-check"></i> 开启</button>
                                         <button type="button" class="btn btn-default" title="屏蔽" onclick='confirm("你确认要屏蔽吗？")'><i class="fa fa-ban"></i> 屏蔽</button>
@@ -38,7 +38,7 @@
 								<div class="pull-right">
 									<div class="input-group input-group-sm" style="width: 150px;">
 										<input type="text" class="form-control pull-right" name="title" placeholder="广告名称" th:value="${contentVo.title}">
-										<input type="hidden" name="pageIndex" id="pageIndex" th:value="${pageUtils.pageIndex}"/>
+										<input type="hidden" name="pageIndex" id="pageIndex" th:value="${pageutils.pageIndex}"/>
 										<div class="input-group-btn">
 											<button type="submit" class="btn btn-default">
 												<i class="fa fa-search">搜索</i>
@@ -72,7 +72,7 @@
 			                          </tr>
 			                      </thead>
 			                      <tbody>
-			                          <tr th:each="content:${pageUtils.records}">
+			                          <tr th:each="content:${pageutils.records}">
 			                              <td><input  type="checkbox"></td>
 				                          <td th:text="${content.id}">1</td>
 									      <td th:text="${content.categoryId}">1</td>
@@ -84,7 +84,7 @@
 									      <td th:text="${content.sortOrder}">1</td>
 									      <td th:text="${content.status==1?'有效':'无效'}">有效</td>
 		                                  <td class="text-center">
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" th:onclick="|findOneById(${content.id})|">修改</button>
+		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal">修改</button>
 											  <button class="btn btn-xs bg-red color-palette" th:onclick="|deleteById(${content.id});|">删除</button>
 		                                  </td>
 			                          </tr>
@@ -95,11 +95,11 @@
 								<div class="row">
 									<div class="col-sm-6"><div class="dataTables_paginate paging_bootstrap" id="sample-table_paginate">
 										<ul class="pagination">
-											<li class="prev" th:if="${pageUtils.pageIndex>1}"><a href="#" th:onclick="'goPage('+${pageUtils.pageIndex-1}+')'">上一页</a></li>
-											<li th:each="num:${pageUtils.numbers}" th:class="${pageUtils.pageIndex==num}? active"><a href="#" th:onclick="'goPage('+${num}+')'" th:text="${num}">1</a></li>
-											<li class="next" th:if="${pageUtils.pageIndex<pageUtils.pageCount}"><a href="#" th:onclick="'goPage('+${pageUtils.pageIndex+1}+')'">下一页</a></li>
-											<li class="next"><a href="#" th:text="|共${pageUtils.pageCount}页|">XX</a></li>
-											<li class="next"><a href="#" th:text="|共${pageUtils.totalCount}条|">XX</a></li>
+											<li class="prev" th:if="${pageutils.pageIndex>1}"><a href="#" th:onclick="'goPage('+${pageutils.pageIndex-1}+')'">上一页</a></li>
+											<li th:each="num:${pageutils.numbers}" th:class="${pageutils.pageIndex==num}? active"><a href="#" th:onclick="'goPage('+${num}+')'" th:text="${num}">1</a></li>
+											<li class="next" th:if="${pageutils.pageIndex<pageutils.pageCount}"><a href="#" th:onclick="'goPage('+${pageutils.pageIndex+1}+')'">下一页</a></li>
+											<li class="next"><a href="#" th:text="|共${pageutils.pageCount}页|">XX</a></li>
+											<li class="next"><a href="#" th:text="|共${pageutils.totalCount}条|">XX</a></li>
 										</ul>
 									</div>
 									</div>
@@ -112,143 +112,143 @@
                     <!-- /.box-body -->
 
 
-<!-- 编辑窗口 -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">广告编辑</h3>
-		</div>
-		<div class="modal-body">
+			<!-- 编辑窗口 -->
+			<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" >
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">广告编辑</h3>
+						</div>
+						<div class="modal-body">
 
-			<table class="table table-bordered table-striped"  width="800px">
-				<tr>
-		      		<td>广告分类</td>
-		      		<td>
-		      			<select id="updarteselect" name="cateporyId" class="form-control" >
-		                </select>
-		      		</td>
-		      	</tr>
-		      	<tr>
-		      		<td>标题</td>
-		      		<td><input  class="form-control" placeholder="标题" id="title" name="titile">  </td>
-		      	</tr>
-			    <tr>
-		      		<td>URL</td>
-		      		<td><input  class="form-control" placeholder="URL" id="url" name="url" >  </td>
-		      	</tr>
-		      	<tr>
-		      		<td>排序</td>
-		      		<td><input  class="form-control" placeholder="排序" id="sortOrder" name="sortOrder" >  </td>
-		      	</tr>
-		      	<tr>
-		      		<td>广告图片</td>
-		      		<td>
-						<table>
-							<tr>
-								<td>
-								<input type="file" id="file_image_update" onchange="uploadImageFile_update();" />
-									<input type="hidden" id="img_url_update">
-					            </td>
-								<td>
-									<img  id="update_img" src="" width="200px" height="100px">
-								</td>
-							</tr>
-						</table>
-		      		</td>
-		      	</tr>
-		      	<tr>
-		      		<td>是否有效</td>
-		      		<td>
-						<input type="radio" id="firstradio" name="status" value="1">启用
-						<input type="radio" id="secradio" name="status" value="0">禁用
-		      		</td>
-		      	</tr>
-			 </table>
+							<table class="table table-bordered table-striped"  width="800px">
+								<tr>
+									<td>广告分类</td>
+									<td>
+										<select id="updarteselect" name="cateporyId" class="form-control" >
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>标题</td>
+									<td><input  class="form-control" placeholder="标题" id="title" name="titile">  </td>
+								</tr>
+								<tr>
+									<td>URL</td>
+									<td><input  class="form-control" placeholder="URL" id="url" name="url" >  </td>
+								</tr>
+								<tr>
+									<td>排序</td>
+									<td><input  class="form-control" placeholder="排序" id="sortOrder" name="sortOrder" >  </td>
+								</tr>
+								<tr>
+									<td>广告图片</td>
+									<td>
+										<table>
+											<tr>
+												<td>
+													<input type="file" id="file_image_update" onchange="uploadImageFile_update();" />
+													<input type="hidden" id="img_url_update">
+												</td>
+												<td>
+													<img  id="update_img" src="" width="200px" height="100px">
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>是否有效</td>
+									<td>
+										<input type="radio" id="firstradio" name="status" value="1">启用
+										<input type="radio" id="secradio" name="status" value="0">禁用
+									</td>
+								</tr>
+							</table>
 
-		</div>
-		<div class="modal-footer">
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="updateData();">修改</button>
-			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
-		</div>
-	  </div>
-	</div>
-</div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="updateData();">修改</button>
+							<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
-<!--新增窗口-->
-<form id="addForm">
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabelAdd">广告新增</h3>
-		</div>
-		<div class="modal-body">
+			<!--新增窗口-->
+			<form id="addForm">
+				<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" >
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h3 id="myModalLabelAdd">广告新增</h3>
+							</div>
+							<div class="modal-body">
 
-			<input type="hidden" id="id" value="">
-			<table class="table table-bordered table-striped"  width="800px">
+								<input type="hidden" id="id" value="">
+								<table class="table table-bordered table-striped"  width="800px">
 
-				<tr>
-		      		<td>广告分类</td>
-		      		<td>
-		      			<select id="addselect" class="form-control" name="categoryId" >
-		                </select>
-		      		</td>
-		      	</tr>
-		      	<tr>
-		      		<td>标题</td>
-		      		<td><input  class="form-control" placeholder="标题" name="title">  </td>
-		      	</tr>
-			    <tr>
-		      		<td>URL</td>
-		      		<td><input  class="form-control" placeholder="URL" name="url">  </td>
-		      	</tr>
-		      	<tr>
-		      		<td>排序</td>
-		      		<td><input  class="form-control" placeholder="排序" name="sortOrder">  </td>
-		      	</tr>
-		      	<tr>
-		      		<td>广告图片</td>
-		      		<td>
-						<table>
-							<tr>
-								<td>
-								<input type="file" id="file_image_add" onchange="uploadImageFile_add()" />
-									<input type="hidden" name="pic" id="img_url_add">
-					            </td>
-								<td>
-									<img id="upload_img_add" src="" width="200px" height="100px">
-								</td>
-							</tr>
-						</table>
-		      		</td>
-		      	</tr>
-		      	<tr>
-		      		<td>是否有效</td>
-		      		<td>
+									<tr>
+										<td>广告分类</td>
+										<td>
+											<select id="addselect" class="form-control" name="categoryId" >
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>标题</td>
+										<td><input  class="form-control" placeholder="标题" name="title">  </td>
+									</tr>
+									<tr>
+										<td>URL</td>
+										<td><input  class="form-control" placeholder="URL" name="url">  </td>
+									</tr>
+									<tr>
+										<td>排序</td>
+										<td><input  class="form-control" placeholder="排序" name="sortOrder">  </td>
+									</tr>
+									<tr>
+										<td>广告图片</td>
+										<td>
+											<table>
+												<tr>
+													<td>
+														<input type="file" id="file_image_add" onchange="uploadImageFile_add()" />
+														<input type="hidden" name="pic" id="img_url_add">
+													</td>
+													<td>
+														<img id="upload_img_add" src="" width="200px" height="100px">
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>是否有效</td>
+										<td>
 
-						<input type="radio" name="status" value="1" checked="checked">启用
-						<input type="radio" name="status" value="0">禁用
-		      		</td>
-		      	</tr>
-			 </table>
+											<input type="radio" name="status" value="1" checked="checked">启用
+											<input type="radio" name="status" value="0">禁用
+										</td>
+									</tr>
+								</table>
 
-		</div>
-		<div class="modal-footer">
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="saveDatas();">保存</button>
-			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
-		</div>
-	  </div>
-	</div>
-</div>
-</form>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="saveDatas();">保存</button>
+								<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
 </body>
 
 </html>
-
 <script type="text/javascript">
+
 
 	//跳转页面
 	function goPage(pageIndex) {
@@ -258,107 +258,27 @@
 	}
 
 	/**
-	 * 新增模态框中的上传图片(异步上传)
-	 */
-	function uploadImageFile_add(){
-		var formData = new FormData();
-		formData.append("file", document.getElementById("file_image_add").files[0]);
-		$.ajax({
-			url:"/upload/uploadImg",
-			type:"post",
-			data: formData,
-			/**
-			 *必须false才会自动加上正确的Content-Type
-			 */
-			contentType: false,
-			/**
-			 * 必须false才会避开jQuery对 formdata 的默认处理
-			 * XMLHttpRequest会对 formdata 进行正确的处理
-			 */
-			processData: false,
-			success:function(result){
-				//alert(JSON.stringify(result));
-				if(result.code==200){
-					//图片回显
-					$("#img_url_add").val(result.data); //藏值--新增
-					$("#upload_img_add").prop("src",result.data); //回显
-				}else{
-					alert("服务器异常");
-				}
-			}
-		});
-	}
-
-	/**
-	 * 编辑界面回显
+	 * 删除一条数据
 	 * @param id
 	 */
-	function findOneById(id){
-		$.getJSON("/content/findOne/"+id,function(result){
-			if(result.code==200){
-				var data=result.data;
-				//alert(JSON.stringify(data));
-				$("#id").val(data.id); //更新藏值
-				$("#title").val(data.title);
-				$("#url").val(data.url);
-				$("#sortOrder").val(data.sortOrder);
-				//回显启用禁用
-				if(data.status==1){
-					$("#firstradio").prop("checked",true);
-				}else{
-					$("#secradio").prop("checked",true);
-				}
-				//下拉框
-				$.getJSON("/content_category/list",function (result){
+	function deleteById(id){
+		if(confirm("确认要删除吗？")){
+			$.ajax({
+				url:"/content/delete/"+id,
+				dataType:"json",
+				type:"delete",
+				success:function (result) {
 					if(result.code==200){
-						var datas=result.data;
-						for(var i=0;i<datas.length;i++){
-							var content_category=datas[i];
-							$("#updarteselect").append("<option value='"+content_category.id+"'>"+content_category.name+"</option>");
-						}
-						//回显下拉框
-						$("#updarteselect").val(data.categoryId);
+						alert("删除成功");
+						location.href="/content/topage";
+					}else if(result.code==800){
+						alert("数据使用中，暂时不能删除~");
+					}else{
+						alert("服务器异常，稍后再试~");
 					}
-				});
-				//图片回显
-				$("#update_img").prop("src",data.pic);
-				$("#img_url_update").val(data.pic); //没有更新图片原地址
-			}else{
-				alert("服务器异常，稍后再试~");
-			}
-		});
-	}
-
-	/**
-	 * 编辑界面更新上传图片
-	 */
-	function uploadImageFile_update(){
-		var formData = new FormData();
-		formData.append("file", document.getElementById("file_image_update").files[0]);
-		$.ajax({
-			url:"/upload/uploadImg",
-			type:"post",
-			data: formData,
-			/**
-			 *必须false才会自动加上正确的Content-Type
-			 */
-			contentType: false,
-			/**
-			 * 必须false才会避开jQuery对 formdata 的默认处理
-			 * XMLHttpRequest会对 formdata 进行正确的处理
-			 */
-			processData: false,
-			success:function(result){
-				//alert(JSON.stringify(result));
-				if(result.code==200){
-					//图片回显
-					$("#img_url_update").val(result.data); //藏值--更新
-					$("#update_img").prop("src",result.data); //回显
-				}else{
-					alert("服务器异常");
 				}
-			}
-		});
+			});
+		}
 	}
 
 	/**
@@ -391,42 +311,4 @@
 		},"json");
 	}
 
-	/**
-	 * 加载下拉框
-	 */
-	$(function (){
-		$.getJSON("/content_category/list",function (result){
-			if(result.code==200){
-				var datas=result.data;
-				for(var i=0;i<datas.length;i++){
-					var content_category=datas[i];
-					$("#addselect").append("<option value='"+content_category.id+"'>"+content_category.name+"</option>");
-				}
-			}
-		});
-	});
-
-	/**
-	 * 删除一条数据
-	 * @param id
-	 */
-	function deleteById(id){
-		if(confirm("确认要删除吗？")){
-			$.ajax({
-				url:"/content/delete/"+id,
-				dataType:"json",
-				type:"delete",
-				success:function (result) {
-					if(result.code==200){
-						alert("删除成功");
-						location.href="/content/topage";
-					}else if(result.code==800){
-						alert("数据使用中，暂时不能删除~");
-					}else{
-						alert("服务器异常，稍后再试~");
-					}
-				}
-			});
-		}
-	}
 </script>

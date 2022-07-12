@@ -21,9 +21,6 @@ public class ContentCategoryController {
 
     @GetMapping("list")
     public DataResults list(){
-        List<ContentCategory> list = contentCategoryServiceApi.list();
-        return DataResults.success(ResultCode.SUCCESS,list);
+        return DataResults.success(ResultCode.SUCCESS,contentCategoryServiceApi.list());
     }
-
-
 }

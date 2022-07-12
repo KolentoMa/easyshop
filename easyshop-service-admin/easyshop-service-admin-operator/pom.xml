@@ -64,7 +64,6 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-
     <build>
 
         <!--maven存在资源过滤的问题-->
@@ -77,15 +76,16 @@
                 </includes>
                 <filtering>true</filtering>
             </resource>
-            <resource>
+            <!--<resource>
                 <directory>src/main/resources</directory>
                 <includes>
+                    <include>**/*.html</include>
                     <include>**/*.properties</include>
                     <include>**/*.yml</include>
                     <include>**/*.xml</include>
                 </includes>
                 <filtering>true</filtering>
-            </resource>
+            </resource>-->
         </resources>
 
     </build>

@@ -25,7 +25,7 @@ public class CommonController {
         log.info("拿到的rusult是==>"+data.getData());
         model.addAttribute("pageutils",data.getData());
         model.addAttribute("contentVo",contentVo);
-        return "tbContent";
+        return "content";
 
     }
 }
