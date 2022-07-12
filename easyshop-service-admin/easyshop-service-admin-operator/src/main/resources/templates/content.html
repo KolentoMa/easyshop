@@ -322,7 +322,7 @@
     /**
      * 新增模态框中的上传图片(异步上传)
      */
-    /*function uploadFile_add(){
+    function uploadFile_add(){
         //模拟form表单文件上传
         var formData = new FormData();
         formData.append("file", document.getElementById("file_image_add").files[0]);
@@ -330,14 +330,14 @@
             url:"/file/upload",
             type:"post",
             data: formData,
-            /!**
+            /**
              *必须false才会自动加上正确的Content-Type
-             *!/
+             */
             contentType: false,
-            /!**
+            /**
              * 必须false才会避开jQuery对 formdata 的默认处理
              * XMLHttpRequest会对 formdata 进行正确的处理
-             *!/
+             */
             processData: false,
             success:function(result){
                 //alert(JSON.stringify(result));
@@ -350,19 +350,19 @@
                 }
             }
         });
-    }*/
+    }
 
     /**
      * 根据ID查询数据回显
      */
     function findOneById(id) {
-        alert(id);
+        //alert(id);
         $.getJSON("/content/findOne/"+id,function(result){
-            alert(JSON.stringify(result));
+            //alert(JSON.stringify(result));
             if(result.code==200){
                 var data=result.data;
 
-                alert(JSON.stringify(data));
+                //alert(JSON.stringify(data));
                 $("#id").val(data.id); //更新藏值
                 $("#title").val(data.title);
                 $("#url").val(data.url);
@@ -387,7 +387,6 @@
                 });
 
                 //图片回显
-                alert("图片回显了");
                 $("#update_img").prop("src",data.pic);
                 $("#img_url_update").val(data.pic); //没有更新图片原地址
             }else{
@@ -399,21 +398,21 @@
     /**
      * 更新的时候文件上传
      */
-    /*function uploadImageFile_update() {
+    function uploadImageFile_update() {
         var formData = new FormData();
         formData.append("file", document.getElementById("file_image_update").files[0]);
         $.ajax({
             url:"/file/upload",
             type:"post",
             data: formData,
-            /!**
+            /**
              *必须false才会自动加上正确的Content-Type
-             *!/
+             */
             contentType: false,
-            /!**
+            /**
              * 必须false才会避开jQuery对 formdata 的默认处理
              * XMLHttpRequest会对 formdata 进行正确的处理
-             *!/
+             */
             processData: false,
             success:function(result){
                 //alert(JSON.stringify(result));
@@ -426,7 +425,7 @@
                 }
             }
         });
-    }*/
+    }
 
     /**
      * 更新

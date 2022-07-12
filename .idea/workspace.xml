@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9374a09f-85f5-459c-bfd6-7fa226e700f4" name="Changes" comment="2022-7-12-easyshop 11:34am不使用老师的前端可以跑通page,已解决自动编译问题，不用手动编译。">
-      <change afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/resources/templates/content_category.html" afterDir="false" />
+    <list default="true" id="9374a09f-85f5-459c-bfd6-7fa226e700f4" name="Changes" comment="2022-7-12-easyshop 基本功能已实现，整合七牛云文件上传">
+      <change afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/config/QiNiuYunConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/controller/FileUploadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/controller/ContentCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/controller/ContentCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/controller/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/java/com/easyshop/controller/ContentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/resources/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/resources/templates/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/resources/templates/contentAA.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-admin/easyshop-service-admin-operator/src/main/resources/templates/tbContentCategory.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/easyshop-service-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-api/easyshop-service-content-api/src/main/java/com/easyshop/service/ContentCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-api/easyshop-service-content-api/src/main/java/com/easyshop/service/ContentCategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-api/easyshop-service-content-api/src/main/java/com/easyshop/service/ContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-api/easyshop-service-content-api/src/main/java/com/easyshop/service/ContentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/src/main/java/com/easyshop/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/src/main/java/com/easyshop/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/src/main/java/com/easyshop/mapper/ContentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/src/main/java/com/easyshop/mapper/ContentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/src/main/java/com/easyshop/service/impl/ContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyshop-service-impl/easyshop-service-impl-content/src/main/java/com/easyshop/service/impl/ContentServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -198,7 +188,7 @@
       <workItem from="1657561333369" duration="1741000" />
       <workItem from="1657590525784" duration="9371000" />
       <workItem from="1657605910915" duration="6919000" />
-      <workItem from="1657628880468" duration="5968000" />
+      <workItem from="1657628880468" duration="11031000" />
     </task>
     <task id="LOCAL-00001" summary="2022-7-12-easyshop">
       <created>1657561596064</created>
@@ -221,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657596916717</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2022-7-12-easyshop 基本功能已实现，整合七牛云文件上传">
+      <created>1657639625641</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657639625641</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +270,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2022-7-12-easyshop" />
     <MESSAGE value="2022-7-12-easyshop 11:34am不使用老师的前端可以跑通page,已解决自动编译问题，不用手动编译。" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-7-12-easyshop 11:34am不使用老师的前端可以跑通page,已解决自动编译问题，不用手动编译。" />
+    <MESSAGE value="2022-7-12-easyshop 基本功能已实现，整合七牛云文件上传" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-7-12-easyshop 基本功能已实现，整合七牛云文件上传" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
